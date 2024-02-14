@@ -33,7 +33,6 @@ body{
     width: 500px;
     font-family: SFProDisplay-Regular, Helvetica, Arial, sans-serif;
     font-size: 28px;
-    font-size: normal;
     line-height: 32px;
     margin-top: -31px;
 }
@@ -101,8 +100,7 @@ body{
 .login_button{
     width: 355px;
     height: 50px;
-    border: 1px solid;
-    border-color: white;
+    border: 1px solid white;
     border-radius: 6px;
     background-color: #1877f2;
     font-size: 20px;
@@ -151,7 +149,6 @@ footer {
     margin-top: 189px;
 }
 .languages{
-    color: inherit;
     color: #737373;
     margin: 0 auto;
     width: 980px;
@@ -163,7 +160,6 @@ footer {
     flex-wrap: wrap;
     column-gap: 14px;
     color: #737373;
-    color: inherit;
     list-style-type: none;
 }
 .login_button:hover{
@@ -180,7 +176,6 @@ a{
 }
 .contacts{
     font-family: inherit;
-    color: inherit;
     color: #737373;
     align-items: center;
     font-size: 12px;
@@ -189,18 +184,15 @@ a{
 .listofcontact{
     list-style-type: none;
     line-height: 1.6;
-    margin-left: -20px;
     display: flex;
     flex-wrap: wrap;
     column-gap: 14px;
     color: #737373;
-    color: inherit;
     width: 980px;
     margin: 0 auto;
 }
 .meta{
     font-family: inherit;
-    margin: auto;
     font-size: 11px;
     color: #737373;
     margin-left: 453px
