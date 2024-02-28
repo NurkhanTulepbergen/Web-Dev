@@ -1,0 +1,18 @@
+img{
+    height: 450px;
+}
+
+.image-buttons{
+    background-color: #BDBDBD;
+    border: 1px solid black;
+    border-radius: 5px;
+    /*width: 70px;*/
+    text-align: center;
+    margin: 10px;
+}
+.button-row{
+    text-align: center;
+}
+.last{
+    width: 190px;
+}

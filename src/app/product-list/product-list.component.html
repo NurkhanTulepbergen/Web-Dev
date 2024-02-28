@@ -1,0 +1,77 @@
+<p class="date">{{date}}</p>
+<h2>{{message}}</h2>
+
+<!--<ul>-->
+<!--    <p *ngFor="let item of items"><li>{{item}}</li></p>-->
+<!--</ul>-->
+<div class="content">
+    <div *ngFor="let product of products; let i = index">
+        <div class="box">
+            <div style="border: none; width: 100%; height: auto;" *ngIf="product.id !== 10">
+                <img [src]="product.img[product.indexOfImage]">
+            </div>
+            <div style="border: none; width: 100%; height: auto;" class="last" *ngIf="product.id === 10" >
+                <img [src]="product.img[product.indexOfImage]" style="width: 100%">
+            </div>
+<!--            <button (click)="window.alert('good')"></button>-->
+            <div class="button-row">
+                    <button type="button" class="image-buttons"(click)="prevImage(product)">
+                        <a class="page-link paginator" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </button>
+                <button type="button" class="image-buttons"  (click)="nextImage(product)">
+                    <a class="page-link paginator" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </button>
+            </div>
+            <h3>
+                <a [routerLink]="['/products', product.id]">
+                    {{ getNameSlice(product.name) }}
+                </a>
+            </h3>
+            <h4>
+                {{product.price}}KZT
+            </h4>
+
+            <p *ngIf="product.description">
+                <strong>Description:</strong> {{ getDescriptionSlice(product.description) }}
+            </p>
+            <p>Rating:{{ product.rating}}</p>
+
+            <button class="btn btn-outline-success share" type="button" (click)="share(product.link)">
+                Share <i class='bx bxl-whatsapp icon'></i>
+            </button>
+            <button class="btn btn-outline-success share" type="button" (click)="share2(product.link)">
+                Share <i class='bx bxl-telegram icon' ></i>
+            </button>
+
+            <div class="like">
+                <div *ngIf="!product.liked">
+                    <button class = "likes"><i class='bx bx-like' style="font-size: 27px; margin-left: 0px" (click)="like(product)"></i></button>
+                    <p class="sum_like">{{ product.likes}}</p>
+                </div>
+                <div *ngIf="product.liked">
+                    <button class = "likes"><i class='bx bxs-like' style="font-size: 27px; margin-left: 0px" (click)="dislike(product)"></i></button>
+                    <p class="sum_like">{{ product.likes}}</p>
+                </div>
+            </div>
+
+            <app-product-alerts [product]="product" (notify)="onNotify()">
+            </app-product-alerts>
+            <div class="delete">
+                <button class="delete-button" (click)="delete(product)">
+                    <i class='bx bx-trash' style="font-size: 27px" ></i>
+                </button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+-->
