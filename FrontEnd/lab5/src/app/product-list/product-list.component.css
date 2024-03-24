@@ -1,0 +1,73 @@
+.date{
+    color: grey;
+    font-size: 12px;
+}
+.box{
+    flex-wrap: wrap;
+    border: 1px solid grey;
+    border-radius: 15px;
+    padding: 20px;
+    margin: 20px;
+    /*height: 500px;*/
+    width: 400px;
+    gap: 10px;
+}
+.content{
+    display: flex;
+    flex-wrap: wrap;
+    /*flex-direction: row;*/
+}
+img{
+    height: 250px;
+    /*width: fit-content;*/
+    /*width: ;*/
+}
+.share{
+    margin: 5px;
+}
+.image-buttons{
+    background-color: #BDBDBD;
+    border: 1px solid black;
+    border-radius: 5px;
+    /*width: 70px;*/
+    text-align: center;
+    margin: 10px;
+}
+.button-row{
+    text-align: center;
+}
+.last{
+    width: 190px;
+}
+
+.likes{
+    background-color: white;
+}
+.like{
+    display: flex;
+    flex-wrap: wrap;
+    /*position: fixed;*/
+    margin-left: 280px;
+    margin-top: -50px;
+}
+.sum_like{
+    /*position: fixed;*/
+    margin-left: -2px;
+    text-align: center;
+    margin-top: -7px;
+}
+
+.delete{
+    margin-left: 280px;
+    margin-top: -60px;
+
+}
+.delete-button{
+    background-color: white;
+}
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/

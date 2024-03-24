@@ -1,0 +1,22 @@
+<h2>Product Details</h2>
+
+<div *ngIf="product">
+    <img [src]="product.img[product.indexOfImage]" alt="">
+    <div class="button-row">
+        <button type="button" class="image-buttons"(click)="prevImage(product)">
+            <a class="page-link paginator" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+            </a>
+        </button>
+        <button type="button" class="image-buttons"  (click)="nextImage(product)">
+            <a class="page-link paginator" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+            </a>
+        </button>
+    </div>
+    <h3>{{ product.name }} </h3>
+    <a href="{{product.link}}">Link to the Kaspi.kz</a>
+    <h4>{{ product.price}}kzt</h4>
+    <p>{{ product.description }}</p>
+    <button type = "button" (click)="CartService.addToCart(product)">BUY</button>
+</div>

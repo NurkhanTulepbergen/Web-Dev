@@ -1,0 +1,28 @@
+<div *ngIf="loggedIn; else loggedOut">
+    Logged In.
+</div>
+
+<ng-template #loggedOut>
+    Please LOGIN
+</ng-template>
+<br>
+<br>
+<button (click) = "myEvent({event : $event})">Event</button>
+
+<br>
+<br>
+
+<button *ngIf="isCollapsed" (click) = "toggleCollapse()">Show</button>
+<button *ngIf="!isCollapsed" (click) = "toggleCollapse()">Don't show</button>
+
+
+<div *ngIf = "!isCollapsed">
+    <p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aliquam aperiam blanditiis debitis est, fugit id labore laboriosam omnis quae recusandae saepe! At cum cumque dolores eaque magnam, qui reiciendis!</span><span>A accusantium dolorem ea, earum enim id officia repellendus unde. Ad adipisci consequatur culpa deleniti, distinctio doloribus eaque ex fugit inventore libero, maiores, perspiciatis unde voluptate? Facilis fugit impedit inventore.</span><span>Aspernatur blanditiis consequatur debitis dolore dolorem esse eum laudantium minima odit perspiciatis placeat quae quos recusandae sequi sit temporibus, vitae. Amet consequatur dolore doloremque dolorum, esse mollitia placeat totam voluptatibus.</span></p>
+</div>
+
+<div>
+    <p>something in the wayyy</p>
+</div>
+
+<input type="text" [value]="text">
+<p>{{text}}</p>
