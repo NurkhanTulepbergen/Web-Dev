@@ -11,7 +11,10 @@ This repository contains resources, tutorials, and exercises designed to guide l
 `Frontend frameworks (Angular)`
 `Backend development (Django)`
 `Database management (PostgreSQL)`
+
 Deployment techniques
+
 And more!
+
 Whether you're a beginner looking to get started or an experienced developer wanting to explore new technologies, this project offers something for everyone.
 
