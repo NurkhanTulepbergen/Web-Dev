@@ -21,11 +21,25 @@ def companies(request):
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-@api_view(['GET'])
+@api_view(['GET', 'DELETE', 'PUT'])
 def companies_detail(request, id):
     company = get_object_or_404(Company, pk=id)
-    serializer = CompanySerializer(company)
-    return Response(serializer.data)
+
+    if request.method == 'GET':
+        serializer = CompanySerializer(company)
+        return Response(serializer.data)
+
+    elif request.method == 'DELETE':
+        company.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
+
+    elif request.method == 'PUT':
+        serializer = CompanySerializer(company, data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
 
 @api_view(['GET', 'POST'])
 def vacancies(request):
@@ -41,11 +55,25 @@ def vacancies(request):
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-@api_view(['GET'])
+@api_view(['GET', 'DELETE', 'PUT'])
 def vacancies_detail(request, id):
     vacancy = get_object_or_404(Vacancy, pk=id)
-    serializer = VacancySerializer(vacancy)
-    return Response(serializer.data)
+
+    if request.method == 'GET':
+        serializer = VacancySerializer(vacancy)
+        return Response(serializer.data)
+
+    elif request.method == 'DELETE':
+        vacancy.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
+
+    elif request.method == 'PUT':
+        serializer = VacancySerializer(vacancy, data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
 
 @api_view(['GET'])
 def vacancies_in_company(request, id):
