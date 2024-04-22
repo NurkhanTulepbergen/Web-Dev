@@ -1,17 +1,23 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CompanyListComponent } from './company-list/company-list.component';
-import { VacancyListComponent } from './vacancy-list/vacancy-list.component';
+import {HttpClient, HttpClientModule} from "@angular/common/http";
+import { HomeComponent } from './home/home.component';
+import { CompaniesComponent } from './companies/companies.component';
+import { CompanyDetailComponent } from './company-detail/company-detail.component';
+import { VacanciesComponent } from './vacancies/vacancies.component';
+import { VacancyDetailComponent } from './vacancy-detail/vacancy-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CompanyListComponent,
-    VacancyListComponent
+    HomeComponent,
+    CompaniesComponent,
+    CompanyDetailComponent,
+    VacanciesComponent,
+    VacancyDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -19,11 +25,6 @@ import { VacancyListComponent } from './vacancy-list/vacancy-list.component';
     HttpClientModule
   ],
   providers: [],
-  bootstrap: []
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
-
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-
-platformBrowserDynamic().bootstrapModule(AppModule)
-  .catch(err => console.error(err));

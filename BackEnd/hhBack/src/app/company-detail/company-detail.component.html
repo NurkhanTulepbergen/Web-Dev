@@ -1,0 +1,34 @@
+<div class="container mt-5">
+  <h1 class="text-center">Company Details</h1>
+  <div class="row justify-content-center mt-4">
+    <div class="col-md-8">
+      <div class="card">
+        <div class="card-body">
+          <div *ngIf="company">
+            <h2 class="card-title">{{ company.name }}</h2>
+            <p class="card-text"><strong>Description:</strong> {{ company.description }}</p>
+            <p class="card-text"><strong>City:</strong> {{ company.city }}</p>
+            <p class="card-text"><strong>Address:</strong> {{ company.address }}</p>
+          </div>
+          <div *ngIf="!company" class="text-center">
+            <p>Loading company details...</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="mt-5 mb-4 text-center">Vacancies</h2>
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="list-group">
+        <a *ngFor="let vacancy of vacancies" [routerLink]="['/vacancies', vacancy.id]" class="list-group-item list-group-item-action">
+          <h5 class="mb-1">{{ vacancy.name }}</h5>
+          <p class="mb-1">{{ vacancy.description }}</p>
+          <p class="mb-1"><strong>Salary:</strong> {{ vacancy.salary }}</p>
+          <p class="mb-1"><strong>Company:</strong> {{ vacancy.company }}</p>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

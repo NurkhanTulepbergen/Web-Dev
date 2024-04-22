@@ -1,0 +1,20 @@
+<div class="container mt-5">
+  <h1 class="text-center">Company Details</h1>
+  <div class="row justify-content-center mt-4">
+    <div class="col-md-8">
+      <div class="card">
+        <div class="card-body">
+          <div *ngIf="vacancy">
+            <h2 class="card-title">{{ vacancy.name }}</h2>
+            <p class="card-text"><strong>Description:</strong> {{ vacancy.description }}</p>
+            <p class="card-text"><strong>Salary:</strong> {{ vacancy.salary }}</p>
+            <p class="card-text"><strong>Company:</strong> {{ vacancy.company }}</p>
+          </div>
+          <div *ngIf="!vacancy" class="text-center">
+            <p>Loading company details...</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

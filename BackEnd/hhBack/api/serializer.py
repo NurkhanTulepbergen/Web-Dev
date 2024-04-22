@@ -1,5 +1,6 @@
 from rest_framework import serializers
-from .models import Company, Vacancy
+from .models import *
+
 
 class CompanySerializer(serializers.ModelSerializer):
     class Meta:
@@ -13,4 +14,3 @@ class VacancySerializer(serializers.ModelSerializer):
         model = Vacancy
         fields = '__all__'
         read_only_fields = ('id',)
-
